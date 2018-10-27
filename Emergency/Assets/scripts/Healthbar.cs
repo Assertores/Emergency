@@ -43,7 +43,5 @@ public class Healthbar : MonoBehaviour
             //schadensindikator
         }
         Lifebar.fillAmount = currentLife / MaxHealth;
-        print(Lifebar.fillAmount);
-
     }
 }
