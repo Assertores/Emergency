@@ -11,6 +11,7 @@ public class Healthbar : MonoBehaviour
     Image Lifebar;
 
     public GameObject gameManager;
+    PatientController patientController;
 
 	void Start ()
     {
@@ -33,7 +34,10 @@ public class Healthbar : MonoBehaviour
         currentLife -= damage;
         if(currentLife <= 0)
         {
-            //tod an patientController
+            patientController.Die();    //tod an patientController
+            return;
         }
+        Lifebar.fillAmount = currentLife / MaxHealth;
+
     }
 }
