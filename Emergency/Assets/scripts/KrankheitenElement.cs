@@ -48,7 +48,7 @@ public class KrankheitenElement : MonoBehaviour {
     public void Buy() {
         gameManager.Buy(GetCost());
         if(Count == 0) {
-            Instantiate(Virus,this.transform);
+            Instantiate(Virus);
         }
         Count += Buy_count;
         if (GCost) {
