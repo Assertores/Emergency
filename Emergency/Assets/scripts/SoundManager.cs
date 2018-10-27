@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Ui;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    Slider SoundSlider;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        SoundSlider = this.gameObject.GetComponent<Slider>();
+        AudioListener.volume = SoundSlider.value;
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+    public void OnValueChanged()
+    {
+        AudioListener.volume = SoundSlider.value;
+    }
 }
