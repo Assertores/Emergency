@@ -2,15 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] PatientController patientController;
+    [SerializeField] Player player;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        if (!patientController)
+        {
+            print("your an idiot");
+        }
+    }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+    public void DealDamage(float dmg)
+    {
+        patientController.DealDamage(dmg);
+    }
+    public void RealeaseMoney(uint amount)
+    {
+        player.AddMoney(amount);
+    }
+    public bool Buy(uint amount)
+    {
+        return player.Buy(amount);
+    }
 }

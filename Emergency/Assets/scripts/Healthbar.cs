@@ -28,7 +28,7 @@ public class Healthbar : MonoBehaviour
         MaxHealth = temp;
     }
 
-    void Decrease(float damage)
+    public void Decrease(float damage)
     {
         currentLife -= damage;
         if(currentLife <= 0)

@@ -6,10 +6,14 @@ public class PatientController : MonoBehaviour
 {
     uint getMoney;
     Healthbar healthbar;
+    GameManager gameManager;
+    Animator PatientAnim;
 
     void Start ()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         healthbar = GetComponent<Healthbar>();
+
 	}
 	
 	void Update ()
@@ -18,7 +22,8 @@ public class PatientController : MonoBehaviour
 	}
     public void Die()
     {
-        //geld ausschütten
+        gameManager.RealeaseMoney(getMoney);
+
         //neuer patient
         //tod anim
         //
@@ -27,5 +32,9 @@ public class PatientController : MonoBehaviour
     {
         getMoney = money;
         healthbar.SetMaxHealth(life);
+    }
+    public void DealDamage(float dmg)
+    {
+        healthbar.Decrease(dmg);
     }
 }
