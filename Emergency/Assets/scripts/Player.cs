@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
     }
 
     public void MakeHit() {
+        print("hit3");
         gameManager.DealDamage(DPC);
     }
 }

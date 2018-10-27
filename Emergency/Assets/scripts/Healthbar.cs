@@ -10,7 +10,7 @@ public class Healthbar : MonoBehaviour
     float currentLife;
     Image Lifebar;
 
-    public GameObject gameManager;
+    public GameObject bar;
     PatientController patientController;
 
 	void Start ()

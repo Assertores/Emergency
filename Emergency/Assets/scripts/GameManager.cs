@@ -37,4 +37,8 @@ public class GameManager : MonoBehaviour
     public float GetCurrentDPC() {
         return player.GetDPC();
     }
+    public void MakeHit() {
+        print("hit 2");
+        player.MakeHit();
+    }
 }
