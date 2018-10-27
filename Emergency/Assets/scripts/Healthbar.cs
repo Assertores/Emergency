@@ -15,6 +15,7 @@ public class Healthbar : MonoBehaviour
 
 	void Start ()
     {
+        patientController = GetComponent<PatientController>();
         Lifebar = bar.gameObject.GetComponent<Image>(); 
         Lifebar.fillAmount = 1;
     }
