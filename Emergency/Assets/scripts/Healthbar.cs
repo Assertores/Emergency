@@ -6,7 +6,7 @@ using System;
 [RequireComponent(typeof(PatientController))]
 public class Healthbar : MonoBehaviour
 {
-    float MaxHealth = 10f;
+    float MaxHealth;
     float currentLife;
     Image Lifebar;
 
@@ -15,7 +15,6 @@ public class Healthbar : MonoBehaviour
 
 	void Start ()
     {
-        currentLife = 10f;
         patientController = GetComponent<PatientController>();
         Lifebar = bar.gameObject.GetComponent<Image>(); 
         Lifebar.fillAmount = 1;
@@ -29,6 +28,7 @@ public class Healthbar : MonoBehaviour
     public void SetMaxHealth(float temp)
     {
         MaxHealth = temp;
+        currentLife = MaxHealth;
     }
 
     public void Decrease(float damage)

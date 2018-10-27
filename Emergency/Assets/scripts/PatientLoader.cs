@@ -19,6 +19,12 @@ public class PatientLoader : MonoBehaviour
     SpriteRenderer Feet;
     SpriteRenderer Head;
 
+    uint KillCount = 0;
+    float AddedHealth =0;
+    [SerializeField] uint PatientHealth = 10;
+    [SerializeField] float HealthMultiplier;
+
+
     PatientController patientController;
 
     void Start()
@@ -34,27 +40,41 @@ public class PatientLoader : MonoBehaviour
         Torso = GameObject.Find("torso").GetComponent<SpriteRenderer>();
         Feet = GameObject.Find("feet").GetComponent<SpriteRenderer>();
         Arm = GameObject.Find("arm").GetComponent<SpriteRenderer>();
+        RandomizePatient(true);
     }	
 	void Update ()
     {
 		
 	}
-    public void RandomizePatient()
+    public void RandomizePatient(bool firstPatient = false)
     {
-        CurrentArm = arms[Random.Range(0, arms.Length)];//randomized sprites
-        CurrentTorso = torso[Random.Range(0, torso.Length)];
-        CurrentHead = heads[Random.Range(0, heads.Length)];
-        CurrentFeet = feet[Random.Range(0, feet.Length)];
+        if(arms != null)CurrentArm = arms[Random.Range(0, arms.Length)];//randomized sprites
+        if(torso!= null)CurrentTorso = torso[Random.Range(0, torso.Length)];
+        if(heads != null)CurrentHead = heads[Random.Range(0, heads.Length)];
+        if(feet != null)CurrentFeet = feet[Random.Range(0, feet.Length)];
 
         Head.sprite = CurrentHead;//setzt aktive sprites
         Feet.sprite = CurrentFeet;
         Torso.sprite = CurrentTorso;
         Arm.sprite = CurrentArm;
         patientController.ResetPatient(life(), money());
+
+        if (!firstPatient)
+        {
+            KillCount++;
+            UpdateAddedHealth();
+        }
+    }
+    void UpdateAddedHealth()
+    {
+        if(KillCount %10 == 0)
+        {
+            AddedHealth = PatientHealth * HealthMultiplier;
+        }
     }
     float life()
     {
-        return 4;
+        return PatientHealth + AddedHealth;
     }
     uint money()
     {

@@ -5,14 +5,13 @@ using UnityEngine;
 public class PatientController : MonoBehaviour
 {
     uint getMoney;
-    Healthbar healthbar;
     GameManager gameManager;
     public Animator PatientAnim;
-    PatientLoader patientLoader;
-
     Vector2 AnimationTarget;
+    PatientLoader patientLoader;
+    Healthbar healthbar;
 
-    void Start ()
+    void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         healthbar = GetComponent<Healthbar>();
@@ -28,12 +27,14 @@ public class PatientController : MonoBehaviour
     {
         gameManager.RealeaseMoney(getMoney);
         PatientAnim.SetBool("Die", true);
+        
         patientLoader.RandomizePatient();
     }
 
     public void ResetPatient(float life, uint money)
     {
         getMoney = money;
+        print(healthbar);
         healthbar.SetMaxHealth(life);
         PatientAnim.SetBool("Die", false);
     }
@@ -44,7 +45,6 @@ public class PatientController : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        print("where trying this now");
         gameManager.MakeHit();
     }
 }
