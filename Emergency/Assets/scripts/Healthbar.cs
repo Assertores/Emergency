@@ -15,6 +15,7 @@ public class Healthbar : MonoBehaviour
 
 	void Start ()
     {
+        currentLife = 10f;
         patientController = GetComponent<PatientController>();
         Lifebar = bar.gameObject.GetComponent<Image>(); 
         Lifebar.fillAmount = 1;
@@ -36,9 +37,13 @@ public class Healthbar : MonoBehaviour
         if(currentLife <= 0)
         {
             patientController.Die();    //tod an patientController
-            return;
+        }
+        else
+        {
+            //schadensindikator
         }
         Lifebar.fillAmount = currentLife / MaxHealth;
+        print(Lifebar.fillAmount);
 
     }
 }

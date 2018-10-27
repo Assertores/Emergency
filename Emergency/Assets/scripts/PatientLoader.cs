@@ -23,10 +23,10 @@ public class PatientLoader : MonoBehaviour
 
     void Start()
     {
-        Sprite[] arms = Resources.LoadAll<Sprite>("ARMS");
+        Sprite[] arms = Resources.LoadAll<Sprite>("ARM");
         Sprite[] torso = Resources.LoadAll<Sprite>("TORSO");
-        Sprite[] heads = Resources.LoadAll<Sprite>("HEADS");
-        Sprite[] feet = Resources.LoadAll<Sprite>("HEADS");
+        Sprite[] heads = Resources.LoadAll<Sprite>("HEAD");
+        Sprite[] feet = Resources.LoadAll<Sprite>("FEET");
 
         patientController = this.gameObject.GetComponent<PatientController>();
 

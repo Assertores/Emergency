@@ -7,7 +7,7 @@ public class PatientController : MonoBehaviour
     uint getMoney;
     Healthbar healthbar;
     GameManager gameManager;
-    Animator PatientAnim;
+    public Animator PatientAnim;
     PatientLoader patientLoader;
 
     Vector2 AnimationTarget;
@@ -17,6 +17,7 @@ public class PatientController : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         healthbar = GetComponent<Healthbar>();
         patientLoader = this.gameObject.GetComponent<PatientLoader>();
+        //PatientAnim = this.gameObject.GetComponentInChildren<Animator>();
 	}
 	
 	void Update ()
@@ -26,7 +27,7 @@ public class PatientController : MonoBehaviour
     public void Die()
     {
         gameManager.RealeaseMoney(getMoney);
-        PatientAnim.SetBool("die", true);
+        PatientAnim.SetBool("Die", true);
         patientLoader.RandomizePatient();
     }
 
@@ -34,7 +35,7 @@ public class PatientController : MonoBehaviour
     {
         getMoney = money;
         healthbar.SetMaxHealth(life);
-        PatientAnim.SetBool("die", false);
+        PatientAnim.SetBool("Die", false);
     }
 
     public void DealDamage(float dmg)

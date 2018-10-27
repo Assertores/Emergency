@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 424311869}
   - component: {fileID: 424311868}
   - component: {fileID: 424311867}
+  - component: {fileID: 424311870}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -349,6 +350,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424311865}
   m_CullTransparentMesh: 0
+--- !u!114 &424311870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 424311865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4f0cbbb7855f347a8fa1d4ca184fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &445948662
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,9 +595,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738106429}
-  - component: {fileID: 2041984465}
   - component: {fileID: 738106430}
   - component: {fileID: 738106431}
+  - component: {fileID: 2041984465}
+  - component: {fileID: 738106432}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -648,6 +661,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1983875446}
+--- !u!114 &738106432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738106428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf554566a9efcf47a03e5203c08ea00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775795943
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822279164}
   - component: {fileID: 822279165}
+  - component: {fileID: 822279166}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -771,6 +796,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &822279166
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 822279163}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79ea02c64118d3c43905dd7b6572313e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &837812165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,3 +1457,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a46a3dc53cda64ba456305adb127c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatientAnim: {fileID: 822279166}
