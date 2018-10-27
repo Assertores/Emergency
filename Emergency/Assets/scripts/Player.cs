@@ -16,6 +16,14 @@ public class Player : MonoBehaviour {
         Money += amount;
     }
 
+    public uint GetMoney() {
+        return Money;
+    }
+
+    public float GetDPC() {
+        return DPC;
+    }
+
     public bool Buy(uint cost) {
         if (Money < cost)
             return false;

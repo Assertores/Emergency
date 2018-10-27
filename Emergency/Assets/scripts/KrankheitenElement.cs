@@ -66,4 +66,8 @@ public class KrankheitenElement : MonoBehaviour {
     float GetDps() {
         return StartDps;//funktion die ausrechnet wie fiel schaden jetzt gemacht wird
     }
+
+    public uint GetCount() {
+        return Count;
+    }
 }

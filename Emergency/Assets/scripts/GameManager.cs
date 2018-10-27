@@ -31,4 +31,10 @@ public class GameManager : MonoBehaviour
     {
         return player.Buy(amount);
     }
+    public uint GetCurrentMoney() {
+        return player.GetMoney();
+    }
+    public float GetCurrentDPC() {
+        return player.GetDPC();
+    }
 }
