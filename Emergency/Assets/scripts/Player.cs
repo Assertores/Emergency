@@ -5,10 +5,23 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField] uint Money;
-    [SerializeField] uint DPC;
-	
+    [SerializeField] float DPC;
+    GameManager gameManager;
+
+    private void Start() {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
+
     public void AddMoney(uint amount) {
         Money += amount;
+    }
+
+    public uint GetMoney() {
+        return Money;
+    }
+
+    public float GetDPC() {
+        return DPC;
     }
 
     public bool Buy(uint cost) {
@@ -19,6 +32,6 @@ public class Player : MonoBehaviour {
     }
 
     public void MakeHit() {
-        //deal Damage(DPC)
+        gameManager.DealDamage(DPC);
     }
 }
