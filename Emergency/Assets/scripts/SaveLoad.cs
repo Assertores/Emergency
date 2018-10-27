@@ -28,14 +28,17 @@ public class SaveLoad : MonoBehaviour {
 
     public void Save() {
         Directory.CreateDirectory(Path);
-        File.WriteAllText(Path + "/" + FileName + ".save", System.DateTime.Now.ToUniversalTime().ToString() + System.Environment.NewLine);
+        File.WriteAllText(Path + "/" + FileName + ".save", System.DateTime.Now.ToString() + System.Environment.NewLine);
+        File.AppendAllText(Path + "/" + FileName + ".save", gameManager.GetCurrentMoney().ToString() + System.Environment.NewLine);
+        File.AppendAllText(Path + "/" + FileName + ".save", gameManager.GetCurrentDPC().ToString());
         foreach (KrankheitenElement it in KE) {
             File.AppendAllText(Path + "/" + FileName + ".save", it.GetCount().ToString() + System.Environment.NewLine);
         }
-        File.AppendAllText(Path + "/" + FileName + ".save", gameManager.GetCurrentMoney().ToString() + System.Environment.NewLine);
-        File.AppendAllText(Path + "/" + FileName + ".save", gameManager.GetCurrentDPC().ToString());
     }
     public void Load() {
+        string [] temp = File.ReadAllLines(Path + "/" + FileName + ".save");
+        System.DateTime name = System.DateTime.Parse(temp[0]);
+        //gameManager.SetCurrentMoney(temp[1])
         //daten rein laden
         //hochrechnen wiefiel in der idle zeit gefarmd wurde
     }
