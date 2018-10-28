@@ -11,6 +11,9 @@ public class PatientController : MonoBehaviour
     PatientLoader patientLoader;
     Healthbar healthbar;
     [SerializeField] GameObject Partikle;
+    List<AudioClip> HitSounds;
+    List<AudioClip> DeathSounds;
+    AudioSource SoundPlayer;
 
     void Start()
     {
@@ -18,6 +21,9 @@ public class PatientController : MonoBehaviour
         healthbar = GetComponent<Healthbar>();
         patientLoader = this.gameObject.GetComponent<PatientLoader>();
         //PatientAnim = this.gameObject.GetComponentInChildren<Animator>();
+        HitSounds = new List<AudioClip>(Resources.LoadAll<AudioClip>("HITSOUNDS"));
+        DeathSounds = new List<AudioClip>(Resources.LoadAll<AudioClip>("DEATHSOUNDS"));
+        SoundPlayer = this.gameObject.GetComponent<AudioSource>();
 	}
 	
 	void Update ()
@@ -26,11 +32,10 @@ public class PatientController : MonoBehaviour
 
     public void Die()
     {
-        print(getMoney);
+        SoundPlayer.clip = DeathSounds[Random.Range(0, DeathSounds.Count - 1)];
+        SoundPlayer.Play();
         gameManager.RealeaseMoney(getMoney);
         //PatientAnim.SetBool("Die", true);
-        print("test");
-
         patientLoader.RandomizePatient();
     }
 
@@ -49,6 +54,8 @@ public class PatientController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        SoundPlayer.clip = HitSounds[Random.Range(0, HitSounds.Count - 1)];
+        SoundPlayer.Play();
         gameManager.MakeHit();
         Vector2 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Partikle.transform.position = new Vector3(temp.x, temp.y, -1);

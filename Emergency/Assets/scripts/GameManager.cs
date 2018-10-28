@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     }
     public void RealeaseMoney(uint amount)
     {
+        
         player.AddMoney(amount);
     }
     public bool Buy(uint amount)
