@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PatientController : MonoBehaviour
 {
+    [SerializeField] float DeathDelay = 0.5f;
     uint getMoney;
     GameManager gameManager;
-    public Animator PatientAnim;
     Vector2 AnimationTarget;
     PatientLoader patientLoader;
     Healthbar healthbar;
@@ -14,16 +14,22 @@ public class PatientController : MonoBehaviour
     List<AudioClip> HitSounds;
     List<AudioClip> DeathSounds;
     AudioSource SoundPlayer;
+    GameObject Deathface;
+    GameObject Eyes;
+    GameObject Mouth;
 
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         healthbar = GetComponent<Healthbar>();
         patientLoader = this.gameObject.GetComponent<PatientLoader>();
-        //PatientAnim = this.gameObject.GetComponentInChildren<Animator>();
         HitSounds = new List<AudioClip>(Resources.LoadAll<AudioClip>("HITSOUNDS"));
         DeathSounds = new List<AudioClip>(Resources.LoadAll<AudioClip>("DEATHSOUNDS"));
         SoundPlayer = this.gameObject.GetComponent<AudioSource>();
+        Deathface = GameObject.Find("deathface");
+        Eyes = GameObject.Find("eyes");
+        Mouth = GameObject.Find("mouth");
+        Deathface.SetActive(false);
 	}
 	
 	void Update ()
@@ -32,19 +38,27 @@ public class PatientController : MonoBehaviour
 
     public void Die()
     {
+        Eyes.SetActive(false);
+        Mouth.SetActive(false);
+        Deathface.SetActive(true);
         SoundPlayer.clip = DeathSounds[Random.Range(0, DeathSounds.Count - 1)];
         SoundPlayer.Play();
         gameManager.RealeaseMoney(getMoney);
-        //PatientAnim.SetBool("Die", true);
+        Invoke("DyingInvoke",DeathDelay);
+    }
+    void DyingInvoke()
+    {
         patientLoader.RandomizePatient();
     }
 
     public void ResetPatient(float life, uint money)
     {
+        Deathface.SetActive(false);
+        Mouth.SetActive(true);
+        Eyes.SetActive(true);
         getMoney = money;
         print(healthbar);
         healthbar.SetMaxHealth(life);
-        PatientAnim.SetBool("Die", false);
     }
 
     public void DealDamage(float dmg)

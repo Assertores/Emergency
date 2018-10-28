@@ -60,10 +60,9 @@ public class PatientLoader : MonoBehaviour
         feet = new List<Sprite>(Resources.LoadAll<Sprite>("FEET"));
         augen = new List<Sprite>(Resources.LoadAll<Sprite>("AUGEN"));
         hosen = new List<Sprite>(Resources.LoadAll<Sprite>("HOSE"));
-        mund = new List<Sprite>(Resources.LoadAll<Sprite>("MIND"));
+        mund = new List<Sprite>(Resources.LoadAll<Sprite>("MUND"));
         body = new List<Sprite>(Resources.LoadAll<Sprite>("BODY"));
         haare = new List<Sprite>(Resources.LoadAll<Sprite>("HAARE"));
-        print(augen[0]);
 
        
         patientController = this.gameObject.GetComponent<PatientController>();
@@ -78,7 +77,6 @@ public class PatientLoader : MonoBehaviour
         Mund = GameObject.Find("mouth").GetComponent<SpriteRenderer>();
         Body = GameObject.Find("body").GetComponent<SpriteRenderer>();
         Hair = GameObject.Find("hair").GetComponent<SpriteRenderer>();
-        print(Augen);
         RandomizePatient(true);
     }	
 	void Update ()
@@ -87,18 +85,16 @@ public class PatientLoader : MonoBehaviour
 	}
     public void RandomizePatient(bool firstPatient = false)
     {
-        if(arms.Count != 0)CurrentArm = arms[Random.Range(0, arms.Count-1)];//randomized sprites
-        if(torso.Count != 0) CurrentTorso = torso[Random.Range(0, torso.Count-1)];
-        if(heads.Count != 0) CurrentHead = heads[Random.Range(0, heads.Count-1)];
-        if(feet.Count != 0) CurrentFeet = feet[Random.Range(0, feet.Count-1)];
-        print(Augen);
-        print(augen[0]);
-        print("1");
-        if (augen.Count != 0) CurrentEyes = augen[Random.Range(0, augen.Count-1)];
-        if (hosen.Count != 0) CurrentShorts = hosen[Random.Range(0, hosen.Count-1)];
-        if (mund.Count != 0) CurrentMouth = mund[Random.Range(0, mund.Count-1)];
-        if (body.Count != 0) CurrentBody = body[Random.Range(0, body.Count-1)];
-        if (haare.Count != 0) CurrentHair = haare[Random.Range(0, haare.Count-1)];
+        if(arms.Count != 0)CurrentArm = arms[Random.Range(0, arms.Count)];//randomized sprites
+        if(torso.Count != 0) CurrentTorso = torso[Random.Range(0, torso.Count)];
+        if(heads.Count != 0) CurrentHead = heads[Random.Range(0, heads.Count)];
+        if(feet.Count != 0) CurrentFeet = feet[Random.Range(0, feet.Count)];
+   
+        if (augen.Count != 0) CurrentEyes = augen[Random.Range(0, augen.Count)];
+        if (hosen.Count != 0) CurrentShorts = hosen[Random.Range(0, hosen.Count)];
+        if (mund.Count != 0) CurrentMouth = mund[Random.Range(0, mund.Count)];
+        if (body.Count != 0) CurrentBody = body[Random.Range(0, body.Count)];
+        if (haare.Count != 0) Hair.sprite = haare[Random.Range(0, haare.Count)];
 
         Head.sprite = CurrentHead;//setzt aktive sprites
         Feet.sprite = CurrentFeet;
@@ -109,8 +105,8 @@ public class PatientLoader : MonoBehaviour
         Hosen.sprite = CurrentShorts;
         Mund.sprite = CurrentMouth;
         Body.sprite = CurrentBody;
-        Hair.sprite = CurrentHair;
-        print(CurrentEyes);
+        //Hair.sprite = CurrentHair;
+        //print(CurrentEyes);
 
         patientController.ResetPatient(Life(), Money());
 

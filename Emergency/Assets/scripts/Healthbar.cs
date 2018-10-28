@@ -29,6 +29,7 @@ public class Healthbar : MonoBehaviour
     {
         MaxHealth = temp;
         currentLife = MaxHealth;
+        Lifebar.fillAmount = 1;
     }
 
     public void Decrease(float damage)
