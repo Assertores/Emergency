@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: patient
+    uniqueID: 3833048009
+    locked: 0
+  - name: effects
+    uniqueID: 978647189
+    locked: 0
+  - name: gui
+    uniqueID: 4238378953
+    locked: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PatientLoader : MonoBehaviour
 {
-    Sprite[] arms;//optional
-    Sprite[] torso;
-    Sprite[] heads;
-    Sprite[] feet;
+    List<Sprite> arms;
+    List<Sprite> torso;
+    List<Sprite> heads;
+    List<Sprite> feet;
 
     Sprite CurrentArm;
     Sprite CurrentTorso;
@@ -19,11 +19,11 @@ public class PatientLoader : MonoBehaviour
     SpriteRenderer Feet;
     SpriteRenderer Head;
 
-    Sprite[] augen;//nicht optional
-    Sprite[] hosen;
-    Sprite[] mund;
-    Sprite[] haare;
-    Sprite[] body;
+    List<Sprite> augen;
+    List<Sprite> hosen;
+    List<Sprite> mund;
+    List<Sprite> haare;
+    List<Sprite> body;
 
     Sprite CurrentEyes;
     Sprite CurrentShorts;
@@ -54,17 +54,18 @@ public class PatientLoader : MonoBehaviour
 
     void Start()
     {
-        Sprite[] arms = Resources.LoadAll<Sprite>("ARM");
-        Sprite[] torso = Resources.LoadAll<Sprite>("TORSO");
-        Sprite[] heads = Resources.LoadAll<Sprite>("HEAD");
-        Sprite[] feet = Resources.LoadAll<Sprite>("FEET");
+        arms = new List<Sprite>(Resources.LoadAll<Sprite>("ARM"));
+        torso = new List<Sprite>(Resources.LoadAll<Sprite>("TORSO"));
+        heads = new List<Sprite>(Resources.LoadAll<Sprite>("HEAD"));
+        feet = new List<Sprite>(Resources.LoadAll<Sprite>("FEET"));
+        augen = new List<Sprite>(Resources.LoadAll<Sprite>("AUGEN"));
+        hosen = new List<Sprite>(Resources.LoadAll<Sprite>("HOSE"));
+        mund = new List<Sprite>(Resources.LoadAll<Sprite>("MIND"));
+        body = new List<Sprite>(Resources.LoadAll<Sprite>("BODY"));
+        haare = new List<Sprite>(Resources.LoadAll<Sprite>("HAARE"));
+        print(augen[0]);
 
-        Sprite[] augen = Resources.LoadAll<Sprite>("AUGEN");
-        Sprite[] hosen = Resources.LoadAll<Sprite>("HOSE");
-        Sprite[] mund = Resources.LoadAll<Sprite>("MUND");
-        Sprite[] body = Resources.LoadAll<Sprite>("BODY");
-        Sprite[] haare = Resources.LoadAll<Sprite>("HAARE");
-
+       
         patientController = this.gameObject.GetComponent<PatientController>();
 
         Head = GameObject.Find("head").GetComponent<SpriteRenderer>();
@@ -77,7 +78,7 @@ public class PatientLoader : MonoBehaviour
         Mund = GameObject.Find("mouth").GetComponent<SpriteRenderer>();
         Body = GameObject.Find("body").GetComponent<SpriteRenderer>();
         Hair = GameObject.Find("hair").GetComponent<SpriteRenderer>();
-
+        print(Augen);
         RandomizePatient(true);
     }	
 	void Update ()
@@ -86,16 +87,18 @@ public class PatientLoader : MonoBehaviour
 	}
     public void RandomizePatient(bool firstPatient = false)
     {
-        if(arms != null)CurrentArm = arms[Random.Range(0, arms.Length)];//randomized sprites
-        if(torso!= null)CurrentTorso = torso[Random.Range(0, torso.Length)];
-        if(heads != null)CurrentHead = heads[Random.Range(0, heads.Length)];
-        if(feet != null)CurrentFeet = feet[Random.Range(0, feet.Length)];
-
-        if (augen != null) CurrentEyes = augen[Random.Range(0, augen.Length)];
-        if (hosen != null) CurrentShorts = hosen[Random.Range(0, hosen.Length)];
-        if (mund != null) CurrentMouth = mund[Random.Range(0, mund.Length)];
-        if (body != null) CurrentBody = body[Random.Range(0, body.Length)];
-        if (haare != null) CurrentHair = haare[Random.Range(0, haare.Length)];
+        if(arms.Count != 0)CurrentArm = arms[Random.Range(0, arms.Count-1)];//randomized sprites
+        if(torso.Count != 0) CurrentTorso = torso[Random.Range(0, torso.Count-1)];
+        if(heads.Count != 0) CurrentHead = heads[Random.Range(0, heads.Count-1)];
+        if(feet.Count != 0) CurrentFeet = feet[Random.Range(0, feet.Count-1)];
+        print(Augen);
+        print(augen[0]);
+        print("1");
+        if (augen.Count != 0) CurrentEyes = augen[Random.Range(0, augen.Count-1)];
+        if (hosen.Count != 0) CurrentShorts = hosen[Random.Range(0, hosen.Count-1)];
+        if (mund.Count != 0) CurrentMouth = mund[Random.Range(0, mund.Count-1)];
+        if (body.Count != 0) CurrentBody = body[Random.Range(0, body.Count-1)];
+        if (haare.Count != 0) CurrentHair = haare[Random.Range(0, haare.Count-1)];
 
         Head.sprite = CurrentHead;//setzt aktive sprites
         Feet.sprite = CurrentFeet;
@@ -107,6 +110,7 @@ public class PatientLoader : MonoBehaviour
         Mund.sprite = CurrentMouth;
         Body.sprite = CurrentBody;
         Hair.sprite = CurrentHair;
+        print(CurrentEyes);
 
         patientController.ResetPatient(Life(), Money());
 
