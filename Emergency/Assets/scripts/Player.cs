@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     [Range(0, 1)]
     [SerializeField] float CostMultiplyer = 1;
     [SerializeField] int AmountPerClick = 1;
-    [SerializeField] int ClickAmountMultiplier;
+    [SerializeField] float ClickAmountMultiplier;
     [SerializeField] int x; //für Levelerhöhung
     GameManager gameManager;
     float AddedDPC = 0;
