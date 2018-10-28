@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         AddedDPC = DPC * DPCMultiplyer;
         DPCUpdateDisplay.text = AddedDPC.ToString();
+        UpdateMoneyDisplay();
     }
 
     public void AddMoney(uint amount) {

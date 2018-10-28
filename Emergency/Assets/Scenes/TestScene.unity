@@ -438,11 +438,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PatientHealth: 10
-  HealthMultiplier: 0
-  AmountPerDeath: 0
-  AmountPerSecond: 0
-  IdleAmountMultiplier: 0
-  DeathAmountMultiplier: 0
+  HealthMultiplier: 1
+  AmountPerDeath: 10
+  AmountPerSecond: 1
+  IdleAmountMultiplier: 1
+  DeathAmountMultiplier: 1
 --- !u!1 &775795943
 GameObject:
   m_ObjectHideFlags: 0

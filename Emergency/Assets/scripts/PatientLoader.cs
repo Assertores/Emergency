@@ -22,12 +22,12 @@ public class PatientLoader : MonoBehaviour
     uint KillCount = 0;
     float AddedHealth =0;
     [SerializeField] uint PatientHealth = 10;
-    [SerializeField] float HealthMultiplier;
+    [SerializeField] float HealthMultiplier = 1;
 
-    [SerializeField]float AmountPerDeath;
-    [SerializeField]float AmountPerSecond;
-    [SerializeField]float IdleAmountMultiplier;
-    [SerializeField] uint DeathAmountMultiplier;
+    [SerializeField] float AmountPerDeath = 10;
+    [SerializeField]float AmountPerSecond = 1;
+    [SerializeField]float IdleAmountMultiplier = 1;
+    [SerializeField] uint DeathAmountMultiplier = 1;
     float AddedClickAmount;
     int ClickDamageLevel;
 
