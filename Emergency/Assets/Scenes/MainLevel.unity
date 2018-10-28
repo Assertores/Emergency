@@ -3100,8 +3100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
-  Name: 
+  Name: drei
+  _NameText: {fileID: 537652825}
   Icon: {fileID: 0}
+  _IconImage: {fileID: 2455969}
+  _CostText: {fileID: 856042070}
+  _DpsText: {fileID: 242903910}
   StartCost: 0
   CostMultiplyer: 1
   StartDps: 0
@@ -4614,8 +4618,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
-  Name: 
+  Name: 5
+  _NameText: {fileID: 1955976136}
   Icon: {fileID: 0}
+  _IconImage: {fileID: 1832038507}
+  _CostText: {fileID: 1379503014}
+  _DpsText: {fileID: 1624388781}
   StartCost: 0
   CostMultiplyer: 1
   StartDps: 0
@@ -5511,8 +5519,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
-  Name: 
+  Name: 4
+  _NameText: {fileID: 1149992103}
   Icon: {fileID: 0}
+  _IconImage: {fileID: 464968028}
+  _CostText: {fileID: 1821661797}
+  _DpsText: {fileID: 1493125069}
   StartCost: 0
   CostMultiplyer: 1
   StartDps: 0
@@ -6189,8 +6201,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
-  Name: 
+  Name: 1
+  _NameText: {fileID: 79476077}
   Icon: {fileID: 0}
+  _IconImage: {fileID: 1306092499}
+  _CostText: {fileID: 1024659961}
+  _DpsText: {fileID: 2128324349}
   StartCost: 0
   CostMultiplyer: 1
   StartDps: 0
@@ -8482,8 +8498,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
-  Name: 
+  Name: 2
+  _NameText: {fileID: 718358010}
   Icon: {fileID: 0}
+  _IconImage: {fileID: 2041078155}
+  _CostText: {fileID: 1180327715}
+  _DpsText: {fileID: 1988163167}
   StartCost: 0
   CostMultiplyer: 1
   StartDps: 0
