@@ -38,9 +38,9 @@ public class PatientController : MonoBehaviour
 
     public void Die()
     {
+        Deathface.SetActive(true);
         Eyes.SetActive(false);
         Mouth.SetActive(false);
-        Deathface.SetActive(true);
         SoundPlayer.clip = DeathSounds[Random.Range(0, DeathSounds.Count - 1)];
         SoundPlayer.Play();
         gameManager.RealeaseMoney(getMoney);
