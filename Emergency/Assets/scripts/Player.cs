@@ -62,7 +62,7 @@ public class Player : MonoBehaviour {
             AddedDPC = DPC * DPCMultiplyer;
         }
         //wieviel teurer wirds (click)
-        AddedClickAmount = AmountPerClick * (UpgradeCount / x * ClickAmountMultiplier);
+        AddedClickAmount = AmountPerClick * (UpgradeCount / x) * ClickAmountMultiplier;
         print(AddedClickAmount);
         //alle 10 level mehr +jeder click
         if(UpgradeCount %10 ==0)
