@@ -801,7 +801,9 @@ MonoBehaviour:
   Name: 
   Icon: {fileID: 0}
   StartCost: 0
+  CostMultiplyer: 1
   StartDps: 0
+  DpsMultiplyer: 1
 --- !u!4 &775795945
 Transform:
   m_ObjectHideFlags: 0
