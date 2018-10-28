@@ -384,8 +384,10 @@ MonoBehaviour:
   Virus: {fileID: 1032899941592110, guid: cfd78aa0b8f3ddc479df87f2eb80e187, type: 2}
   Name: Test
   Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  StartCost: 0
+  StartCost: 1
+  CostMultiplyer: 0.066
   StartDps: 1
+  DpsMultiplyer: 0.081
 --- !u!114 &114867622265324458
 MonoBehaviour:
   m_ObjectHideFlags: 1

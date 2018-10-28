@@ -258,6 +258,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Money: 0
   DPC: 1
+  DPCMultiplyer: 1
+  MoneyDisplay: {fileID: 0}
+  DPCDisplay: {fileID: 0}
+  DPCUpdateDisplay: {fileID: 0}
 --- !u!4 &152601431
 Transform:
   m_ObjectHideFlags: 0
@@ -757,6 +761,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf554566a9efcf47a03e5203c08ea00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatientHealth: 10
+  HealthMultiplier: 0
+  AmountPerDeath: 0
+  AmountPerSecond: 0
+  IdleAmountMultiplier: 0
+  DeathAmountMultiplier: 0
 --- !u!1 &775795943
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +798,9 @@ MonoBehaviour:
   Name: 
   Icon: {fileID: 0}
   StartCost: 0
+  CostMultiplyer: 1
   StartDps: 0
+  DpsMultiplyer: 1
 --- !u!4 &775795945
 Transform:
   m_ObjectHideFlags: 0

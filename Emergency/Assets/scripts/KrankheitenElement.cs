@@ -10,9 +10,13 @@ public class KrankheitenElement : MonoBehaviour {
     [SerializeField] String Name;
     [SerializeField] Sprite Icon;
     [SerializeField] uint StartCost;
+    [Range(0, 1)]
+    [SerializeField] float CostMultiplyer = 1;
     [SerializeField] float StartDps;
+    [Range(0,1)]
+    [SerializeField] float DpsMultiplyer = 1;
     uint Count = 0;
-    uint Buy_count = 1;
+    uint Buy_amount = 1;
 
     GameObject GCost;
     GameObject GDps;
@@ -50,7 +54,7 @@ public class KrankheitenElement : MonoBehaviour {
         if(Count == 0) {
             Instantiate(Virus);
         }
-        Count += Buy_count;
+        Count += Buy_amount;
         if (GCost) {
             GCost.GetComponent<Text>().text = GetCost().ToString();
         }
@@ -60,11 +64,11 @@ public class KrankheitenElement : MonoBehaviour {
     }
 
     uint GetCost() {
-        return StartCost;//funktion die ausrechnet wie fiels jetzt kossted
+        return (uint)(CostMultiplyer * Count * Count) + StartCost;//funktion die ausrechnet wie fiels jetzt kossted
     }
 
     float GetDps() {
-        return StartDps;//funktion die ausrechnet wie fiel schaden jetzt gemacht wird
+        return DpsMultiplyer * Count * Count + StartDps;
     }
 
     public uint GetCount() {
