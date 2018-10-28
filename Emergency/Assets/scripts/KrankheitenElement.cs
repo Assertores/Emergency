@@ -8,7 +8,11 @@ public class KrankheitenElement : MonoBehaviour {
 
     [SerializeField] GameObject Virus;
     [SerializeField] String Name;
+    [SerializeField] Text _NameText;
     [SerializeField] Sprite Icon;
+    [SerializeField] Image _IconImage;
+    [SerializeField] Text _CostText;
+    [SerializeField] Text _DpsText;
     [SerializeField] uint StartCost;
     [Range(0, 1)]
     [SerializeField] float CostMultiplyer = 1;
@@ -24,22 +28,10 @@ public class KrankheitenElement : MonoBehaviour {
     GameManager gameManager;
 
     private void Start() {
-        GameObject GName = GameObject.Find("Name");
-        if (GName) {
-            GName.GetComponent<Text>().text = Name;
-        }
-        GameObject GIcon = GameObject.Find("Icon");
-        if (GIcon) {
-            GIcon.GetComponent<Image>().sprite = Icon;
-        }
-        GCost = GameObject.Find("Cost");
-        if (GCost) {
-            GCost.GetComponent<Text>().text = GetCost().ToString();
-        }
-        GDps = GameObject.Find("DPS");
-        if (GDps) {
-            GDps.GetComponent<Text>().text = GetDps().ToString();
-        }
+        _NameText.text = Name;
+        _IconImage.sprite = Icon;
+        _CostText.text = GetCost().ToString();
+        _DpsText.text = GetDps().ToString();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
@@ -55,12 +47,8 @@ public class KrankheitenElement : MonoBehaviour {
             Instantiate(Virus);
         }
         Count += Buy_amount;
-        if (GCost) {
-            GCost.GetComponent<Text>().text = GetCost().ToString();
-        }
-        if (GDps) {
-            GDps.GetComponent<Text>().text = GetDps().ToString();
-        }
+        _CostText.text = GetCost().ToString();
+        _DpsText.text = GetDps().ToString();
     }
 
     uint GetCost() {

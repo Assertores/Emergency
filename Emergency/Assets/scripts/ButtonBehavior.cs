@@ -15,7 +15,7 @@ public class ButtonBehavior : MonoBehaviour {
             KE[i].gameObject.SetActive(false);
         }
         if(KE.Length >= 2) {
-            dist = KE[2].transform.position.x;
+            dist = KE[1].transform.position.x - KE[0].transform.position.x;
         }
     }
 
@@ -30,10 +30,10 @@ public class ButtonBehavior : MonoBehaviour {
 	
     public void Backward() {
         if(CurrentPossition > 0) {
+            CurrentPossition--;
             KE[CurrentPossition].gameObject.SetActive(true);
             KE[CurrentPossition + 3].gameObject.SetActive(false);
             this.transform.position += new Vector3(dist, 0, 0);
-            CurrentPossition--;
         }
     }
 }
