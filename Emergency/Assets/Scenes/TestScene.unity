@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientController: {fileID: 2041984465}
-  player: {fileID: 0}
+  player: {fileID: 1748630927}
 --- !u!4 &445948664
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,6 +1004,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8719c664245df634881600bb61fc11a5, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1748630927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114988983609029738, guid: 8719c664245df634881600bb61fc11a5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1748630926}
+  m_Script: {fileID: 11500000, guid: 793d845819e78524e86eb234e78cf59f, type: 3}
 --- !u!1 &1748630928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1623570350750150, guid: 8719c664245df634881600bb61fc11a5,
