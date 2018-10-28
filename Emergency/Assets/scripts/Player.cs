@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     [SerializeField] Text DPCDisplay;
     [SerializeField] Text DPCUpdateDisplay;
 
-    [SerializeField] int AmountPerClick;
+    [SerializeField] int AmountPerClick = 1;
     [SerializeField] int ClickAmountMultiplier;
     [SerializeField] int x; //für Levelerhöhung
     GameManager gameManager;
@@ -51,7 +51,8 @@ public class Player : MonoBehaviour {
 
     public void MakeHit() {
         gameManager.DealDamage(DPC);
-        Money = (uint)AmountPerClick;
+        Money += (uint)AmountPerClick;
+        print(Money);
     }
 
     public void UpgradeClick() {
