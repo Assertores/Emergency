@@ -7,9 +7,11 @@ public class SoundManager : MonoBehaviour
 {
     Slider SoundSlider;
     Button SoundImage;
+    AudioSource PlayClickSound;
 
     void Start()
     {
+        PlayClickSound = this.gameObject.GetComponent<AudioSource>();
         SoundSlider = this.gameObject.GetComponent<Slider>();
         SoundSlider.onValueChanged.AddListener(delegate { ValueChanged(); });
         SoundSlider.value = 1;
@@ -22,5 +24,6 @@ public class SoundManager : MonoBehaviour
     public void ValueChanged()
     {
         AudioListener.volume = SoundSlider.value;
+        PlayClickSound.Play();
     }
 }
