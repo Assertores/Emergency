@@ -26,9 +26,11 @@ public class PatientController : MonoBehaviour
 
     public void Die()
     {
+        print(getMoney);
         gameManager.RealeaseMoney(getMoney);
-        PatientAnim.SetBool("Die", true);
-        
+        //PatientAnim.SetBool("Die", true);
+        print("test");
+
         patientLoader.RandomizePatient();
     }
 
