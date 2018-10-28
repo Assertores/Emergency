@@ -95,7 +95,7 @@ public class PatientLoader : MonoBehaviour
         if (hosen != null) CurrentShorts = hosen[Random.Range(0, hosen.Length)];
         if (mund != null) CurrentMouth = mund[Random.Range(0, mund.Length)];
         if (body != null) CurrentBody = body[Random.Range(0, body.Length)];
-        if (Hair != null) CurrentHair = haare[Random.Range(0, haare.Length)];
+        if (haare != null) CurrentHair = haare[Random.Range(0, haare.Length)];
 
         Head.sprite = CurrentHead;//setzt aktive sprites
         Feet.sprite = CurrentFeet;
