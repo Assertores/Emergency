@@ -11,7 +11,12 @@ public class Player : MonoBehaviour {
     [SerializeField] Text MoneyDisplay;//prottypDisplay
     [SerializeField] Text DPCDisplay;
     [SerializeField] Text DPCUpdateDisplay;
-
+    [SerializeField] Text AddedClickAmountDisplay;
+    [SerializeField] Text ClickAmountDisplay;
+    [SerializeField] Text CostDisplay;
+    [SerializeField] uint StartCost;
+    [Range(0, 1)]
+    [SerializeField] float CostMultiplyer = 1;
     [SerializeField] int AmountPerClick = 1;
     [SerializeField] int ClickAmountMultiplier;
     [SerializeField] int x; //für Levelerhöhung
@@ -27,6 +32,7 @@ public class Player : MonoBehaviour {
         AddedDPC = DPC * DPCMultiplyer;
         DPCUpdateDisplay.text = AddedDPC.ToString();
         UpdateMoneyDisplay();
+        UpdatePlayerFeald();
     }
 
     public void AddMoney(uint amount) {
@@ -57,6 +63,9 @@ public class Player : MonoBehaviour {
     }
 
     public void UpgradeClick() {
+        if (Money < GetCost())
+            return;
+        Money -= GetCost();
         UpgradeCount++;
         for (uint i = 0; i < BuyAmount; i++) {
             DPC += AddedDPC;
@@ -71,11 +80,22 @@ public class Player : MonoBehaviour {
             AmountPerClick += (int)AddedClickAmount;
         }
 
+        UpdatePlayerFeald();
+    }
+
+    void UpdatePlayerFeald() {
         DPCDisplay.text = DPC.ToString();
         DPCUpdateDisplay.text = AddedDPC.ToString();
+        AddedClickAmountDisplay.text = AddedClickAmount.ToString();
+        ClickAmountDisplay.text = AmountPerClick.ToString();
+        CostDisplay.text = GetCost().ToString();
     }
 
     void UpdateMoneyDisplay() {
         MoneyDisplay.text = Money.ToString();
+    }
+
+    uint GetCost() {
+        return (uint)(CostMultiplyer * UpgradeCount * UpgradeCount + StartCost);//funktion die ausrechnet wie fiels jetzt kossted
     }
 }
