@@ -4,13 +4,36 @@ using UnityEngine;
 
 public class ButtonBehavior : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    KrankheitenElement[] KE;
+    int CurrentPossition = 0;
+    float dist = 0;
+
+    // Use this for initialization
+    void Start () {
+        KE = this.GetComponentsInChildren<KrankheitenElement>();
+        for(int i = 3; i < KE.Length; i++) {
+            KE[i].gameObject.SetActive(false);
+        }
+        if(KE.Length >= 2) {
+            dist = KE[2].transform.position.x;
+        }
+    }
+
+    public void Forward() {
+        if(KE.Length > CurrentPossition + 3) {
+            KE[CurrentPossition].gameObject.SetActive(false);
+            KE[CurrentPossition+3].gameObject.SetActive(true);
+            this.transform.position -= new Vector3(dist, 0, 0);
+            CurrentPossition++;
+        }
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void Backward() {
+        if(CurrentPossition > 0) {
+            KE[CurrentPossition].gameObject.SetActive(true);
+            KE[CurrentPossition + 3].gameObject.SetActive(false);
+            this.transform.position += new Vector3(dist, 0, 0);
+            CurrentPossition--;
+        }
+    }
 }
