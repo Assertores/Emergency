@@ -38,10 +38,6 @@ public class Healthbar : MonoBehaviour
         {
             patientController.Die();    //tod an patientController
         }
-        else
-        {
-            //schadensindikator
-        }
         Lifebar.fillAmount = currentLife / MaxHealth;
     }
 }
