@@ -45,6 +45,9 @@ TagManager:
   - name: patient
     uniqueID: 3833048009
     locked: 0
+  - name: Krankheiten
+    uniqueID: 6790037
+    locked: 0
   - name: effects
     uniqueID: 978647189
     locked: 0

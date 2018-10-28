@@ -42,13 +42,15 @@ public class KrankheitenElement : MonoBehaviour {
     }
 
     public void Buy() {
-        gameManager.Buy(GetCost());
-        if(Count == 0) {
-            Instantiate(Virus);
+        if (gameManager.Buy(GetCost())) {
+            if (Count == 0) {
+                Instantiate(Virus);
+            }
+            Count += Buy_amount;
+            _CostText.text = GetCost().ToString();
+            _DpsText.text = GetDps().ToString();
         }
-        Count += Buy_amount;
-        _CostText.text = GetCost().ToString();
-        _DpsText.text = GetDps().ToString();
+        
     }
 
     uint GetCost() {
