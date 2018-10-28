@@ -24,6 +24,13 @@ public class PatientLoader : MonoBehaviour
     [SerializeField] uint PatientHealth = 10;
     [SerializeField] float HealthMultiplier;
 
+    [SerializeField]float AmountPerDeath;
+    [SerializeField]float AmountPerSecond;
+    [SerializeField]float IdleAmountMultiplier;
+    [SerializeField] uint DeathAmountMultiplier;
+    float AddedClickAmount;
+    int ClickDamageLevel;
+
 
     PatientController patientController;
 
@@ -57,7 +64,7 @@ public class PatientLoader : MonoBehaviour
         Feet.sprite = CurrentFeet;
         Torso.sprite = CurrentTorso;
         Arm.sprite = CurrentArm;
-        patientController.ResetPatient(life(), money());
+        patientController.ResetPatient(Life(), Money());
 
         if (!firstPatient)
         {
@@ -72,13 +79,14 @@ public class PatientLoader : MonoBehaviour
             AddedHealth = PatientHealth * HealthMultiplier;
         }
     }
-    float life()
+    float Life()
     {
         return PatientHealth + AddedHealth;
     }
-    uint money()
+    uint Money()
     {
-        return 10;
+        AmountPerDeath = Mathf.RoundToInt(AmountPerDeath + KillCount * DeathAmountMultiplier);
+        return (uint)AmountPerDeath;
     }
 
 }
