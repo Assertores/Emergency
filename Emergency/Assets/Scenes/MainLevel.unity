@@ -265,8 +265,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpgradeClick
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: Desease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -552,8 +552,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65173869}
-        m_MethodName: Open
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,8 +692,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpgradeClick
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: Desease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -899,6 +899,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 65173869}
         m_MethodName: Close
         m_Mode: 1
@@ -4555,6 +4566,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200490703}
   m_CullTransparentMesh: 0
+--- !u!82 &1205245121 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82375713626008040, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+    type: 2}
+  m_PrefabInternal: {fileID: 105754046}
 --- !u!1 &1250884095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,8 +4852,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -461919287
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9d9ecb11a2fd12f4682cc6624502f3d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5469,8 +5485,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpgradeClick
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: Desease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5597,8 +5613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpgradeClick
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: Desease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5987,7 +6003,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1456841328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1456841328
@@ -6877,6 +6904,115 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!1001 &1636899419
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.575697
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.32243025
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646482090546120, guid: 8e49625f7e28ea34ca15b5acdbdad93d, type: 2}
+      propertyPath: m_Name
+      value: DeseaseSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 82375713626008040, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e554fd829e7903942a13d6112863f555, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e49625f7e28ea34ca15b5acdbdad93d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1653976423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7361,8 +7497,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpgradeClick
+      - m_Target: {fileID: 1996053772}
+        m_MethodName: Desease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8311,6 +8447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4f0cbbb7855f347a8fa1d4ca184fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonSource: {fileID: 1205245121}
+  DeseaseSound: {fileID: 0}
 --- !u!114 &1996053773
 MonoBehaviour:
   m_ObjectHideFlags: 0

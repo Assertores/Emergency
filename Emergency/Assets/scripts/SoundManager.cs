@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     Slider SoundSlider;
     Button SoundImage;
     AudioSource PlayClickSound;
+    [SerializeField] AudioSource ButtonSource;
+    [SerializeField] AudioSource DeseaseSound;
 
     void Start()
     {
@@ -25,5 +27,13 @@ public class SoundManager : MonoBehaviour
     {
         AudioListener.volume = SoundSlider.value;
         PlayClickSound.Play();
+    }
+    public void ButtonSound()
+    {
+        ButtonSource.Play();
+    }
+    public void Desease()
+    {
+        DeseaseSound.Play();
     }
 }
