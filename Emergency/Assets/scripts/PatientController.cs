@@ -44,7 +44,9 @@ public class PatientController : MonoBehaviour
         healthbar.Decrease(dmg);
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         gameManager.MakeHit();
+
     }
 }

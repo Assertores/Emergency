@@ -8,13 +8,20 @@ public class Player : MonoBehaviour {
     [SerializeField] uint Money;
     [SerializeField] float DPC;
     [SerializeField] float DPCMultiplyer = 1;
-    [SerializeField] Text MoneyDisplay;
+    [SerializeField] Text MoneyDisplay;//prottypDisplay
     [SerializeField] Text DPCDisplay;
     [SerializeField] Text DPCUpdateDisplay;
+
+    [SerializeField] int AmountPerClick;
+    [SerializeField] int ClickAmountMultiplier;
+    [SerializeField] int x; //für Levelerhöhung
     GameManager gameManager;
     float AddedDPC = 0;
     uint BuyAmount = 1;
+    float AddedClickAmount;
+    uint UpgradeCount=0;
 
+    
     private void Start() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         AddedDPC = DPC * DPCMultiplyer;
@@ -44,13 +51,24 @@ public class Player : MonoBehaviour {
 
     public void MakeHit() {
         gameManager.DealDamage(DPC);
+        Money = (uint)AmountPerClick;
     }
 
     public void UpgradeClick() {
+        UpgradeCount++;
         for (uint i = 0; i < BuyAmount; i++) {
             DPC += AddedDPC;
             AddedDPC = DPC * DPCMultiplyer;
         }
+        //wieviel teurer wirds (click)
+        AddedClickAmount = AmountPerClick * (UpgradeCount / x * ClickAmountMultiplier);
+        print(AddedClickAmount);
+        //alle 10 level mehr +jeder click
+        if(UpgradeCount %10 ==0)
+        {
+            AmountPerClick += (int)AddedClickAmount;
+        }
+
         DPCDisplay.text = DPC.ToString();
         DPCUpdateDisplay.text = AddedDPC.ToString();
     }
