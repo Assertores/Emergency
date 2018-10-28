@@ -10,6 +10,7 @@ public class PatientController : MonoBehaviour
     Vector2 AnimationTarget;
     PatientLoader patientLoader;
     Healthbar healthbar;
+    [SerializeField] GameObject Partikle;
 
     void Start()
     {
@@ -47,6 +48,11 @@ public class PatientController : MonoBehaviour
     private void OnMouseDown()
     {
         gameManager.MakeHit();
+        Vector2 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Partikle.transform.position = new Vector3(temp.x, temp.y, -1);
 
+        print("POS:" + Partikle.transform.position.ToString());
+        Partikle.GetComponent<ParticleSystem>().Play();
+        //Partiel abfeuern
     }
 }
