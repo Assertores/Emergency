@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
     }
 
     void UpdateMoneyDisplay() {
-        MoneyDisplay.text = Money.ToString();
+        MoneyDisplay.text = NumberToString.MakeString(Money);
     }
 
     uint GetCost() {

@@ -14,7 +14,8 @@ public static class NumberToString {
 
     public static string MakeString(int num){
         string einheit;
-        switch((int)Mathf.Log10(num) % 100) {
+        int temp = (int)Mathf.Log10(num) % 100;//dass stimmt irgendwie nicht
+        switch (temp) {
             case 1:
                 einheit = "t";//tausend
                 break;
@@ -61,7 +62,7 @@ public static class NumberToString {
                 einheit = "";//default
                 break;
         }
-        num = (int)(num % 100) * 100;
+        num = (int)(num / 100);
         return num.ToString() + einheit;
     }
 }
