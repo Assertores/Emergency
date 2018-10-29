@@ -59,7 +59,6 @@ public class Player : MonoBehaviour {
     public void MakeHit() {
         gameManager.DealDamage(DPC);
         Money += (uint)AmountPerClick;
-        print(Money);
     }
 
     public void UpgradeClick() {

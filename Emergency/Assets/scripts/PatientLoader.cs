@@ -114,14 +114,14 @@ public class PatientLoader : MonoBehaviour
             KillCount++;
             UpdateAddedHealth();
         }
-        print("New Life: " + Life());
+        print("New Life: " + Life());//----- ----- LOG ----- -----
         patientController.ResetPatient(Life(), Money());
     }
     void UpdateAddedHealth()
     {
         if(KillCount %MultiplierCount == 0)//%10 für den GameDesigner einstellbar gemacht
         {
-            AddedHealth = PatientHealth * HealthMultiplier;
+            AddedHealth = Life() * HealthMultiplier;//hohlt sich aktuelles life nicht start life
         }
     }
     float Life()

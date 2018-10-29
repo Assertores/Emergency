@@ -73,7 +73,6 @@ public class PatientController : MonoBehaviour
         Vector2 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Partikle.transform.position = new Vector3(temp.x, temp.y, -1);
 
-        print("POS:" + Partikle.transform.position.ToString());
         Partikle.GetComponent<ParticleSystem>().Play();
         //Partiel abfeuern
     }
