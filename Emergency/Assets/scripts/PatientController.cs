@@ -17,7 +17,7 @@ public class PatientController : MonoBehaviour
     GameObject Deathface;
     GameObject Eyes;
     GameObject Mouth;
-    bool dead = false;
+    bool dead = false;//ist true solange der patzient gewächselt wird
 
     void Start()
     {
@@ -62,7 +62,7 @@ public class PatientController : MonoBehaviour
 
     public void DealDamage(float dmg)
     {
-        if(!dead)
+        if(!dead)//man kann nur lebenden patzienten schaden machen
             healthbar.Decrease(dmg);
     }
 
