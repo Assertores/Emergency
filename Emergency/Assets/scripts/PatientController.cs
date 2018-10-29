@@ -17,6 +17,7 @@ public class PatientController : MonoBehaviour
     GameObject Deathface;
     GameObject Eyes;
     GameObject Mouth;
+    bool dead = false;
 
     void Start()
     {
@@ -31,13 +32,10 @@ public class PatientController : MonoBehaviour
         Mouth = GameObject.Find("mouth");
         Deathface.SetActive(false);
 	}
-	
-	void Update ()
-    {
-	}
 
     public void Die()
     {
+        dead = true;
         Deathface.SetActive(true);
         Eyes.SetActive(false);
         Mouth.SetActive(false);
@@ -59,11 +57,13 @@ public class PatientController : MonoBehaviour
         getMoney = money;
         print(healthbar);
         healthbar.SetMaxHealth(life);
+        dead = false;
     }
 
     public void DealDamage(float dmg)
     {
-        healthbar.Decrease(dmg);
+        if(!dead)
+            healthbar.Decrease(dmg);
     }
 
     private void OnMouseDown()
