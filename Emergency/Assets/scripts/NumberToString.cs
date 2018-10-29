@@ -5,16 +5,19 @@ using UnityEngine;
 public static class NumberToString {
 
     public static string MakeString(float num) {
-        return MakeString((int)num);
+        return MakeString((uint)num);
+    }
+
+    public static string MakeString(int num){//überladung für andere zahlentypen
+        return MakeString((uint)num);
     }
 
     public static string MakeString(uint num){
-        return MakeString((int)num);
-    }
+        if (num == 0)//sonst macht Log10 seltsame sachen
+            return "0";
 
-    public static string MakeString(int num){
         string einheit;
-        int temp = (int)Mathf.Log10(num) % 100;//dass stimmt irgendwie nicht
+        uint temp = (uint)Mathf.Log10(num)/3;//erechnet sich die tausender stellen (1.000, 1.000.000, usw)
         switch (temp) {
             case 1:
                 einheit = "t";//tausend
@@ -62,7 +65,8 @@ public static class NumberToString {
                 einheit = "";//default
                 break;
         }
-        num = (int)(num / 100);
-        return num.ToString() + einheit;
+        num = (uint)((num/(Mathf.Pow(1000,temp)))+0.5f);//kürtzt die stellen hinten weck
+
+        return num.ToString() + einheit;//setzt den string zusammen
     }
 }
