@@ -20,11 +20,6 @@ public class Healthbar : MonoBehaviour
         Lifebar.fillAmount = 1;
     }
 
-    void Update ()
-    {
-		
-	}
-
     public void SetMaxHealth(float temp)
     {
         MaxHealth = temp;

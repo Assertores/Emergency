@@ -55,7 +55,6 @@ public class PatientController : MonoBehaviour
         Mouth.SetActive(true);
         Eyes.SetActive(true);
         getMoney = money;
-        print(healthbar);
         healthbar.SetMaxHealth(life);
         dead = false;
     }

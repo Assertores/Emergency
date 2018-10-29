@@ -41,6 +41,7 @@ public class PatientLoader : MonoBehaviour
     float AddedHealth =0;
     [SerializeField] uint PatientHealth = 10;
     [SerializeField] float HealthMultiplier = 1;
+    [SerializeField] uint MultiplierCount = 10;
 
     [SerializeField] float AmountPerDeath = 10;
     [SerializeField]float AmountPerSecond = 1;
@@ -107,18 +108,18 @@ public class PatientLoader : MonoBehaviour
         Body.sprite = CurrentBody;
         //Hair.sprite = CurrentHair;
         //print(CurrentEyes);
-
-        patientController.ResetPatient(Life(), Money());
-
+        
         if (!firstPatient)
         {
             KillCount++;
             UpdateAddedHealth();
         }
+        print("New Life: " + Life());
+        patientController.ResetPatient(Life(), Money());
     }
     void UpdateAddedHealth()
     {
-        if(KillCount %10 == 0)
+        if(KillCount %MultiplierCount == 0)//%10 für den GameDesigner einstellbar gemacht
         {
             AddedHealth = PatientHealth * HealthMultiplier;
         }

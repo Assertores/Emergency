@@ -957,7 +957,7 @@ Prefab:
     - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224693778959030752, guid: 8e49625f7e28ea34ca15b5acdbdad93d,
         type: 2}
@@ -1268,7 +1268,7 @@ RectTransform:
   - {fileID: 1699796658}
   - {fileID: 65173865}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1652,7 +1652,7 @@ Transform:
   m_LocalScale: {x: 0.551122, y: 0.403202, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422100370
 GameObject:
@@ -1959,7 +1959,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644311345683102, guid: 3fab3db492f4e5144a534c2ae1f3087c, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fab3db492f4e5144a534c2ae1f3087c, type: 2}
@@ -2645,7 +2645,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4003595781719118, guid: d626ae3a5d895174e9026ba4f275dbee, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d626ae3a5d895174e9026ba4f275dbee, type: 2}
@@ -3040,7 +3040,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070555798
 GameObject:
@@ -4412,7 +4412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Money: 0
   DPC: 1
-  DPCMultiplyer: 0.5
+  DPCMultiplyer: 0.2
   MoneyDisplay: {fileID: 750892775}
   DPCDisplay: {fileID: 144983689}
   DPCUpdateDisplay: {fileID: 1075597854}
@@ -4874,8 +4874,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1996053772}
-        m_MethodName: ButtonSound
+      - m_Target: {fileID: 65173869}
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5842,7 +5842,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4278725959595488, guid: 096997b290641a94bb9de0f5c0a54092, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114989375877671710, guid: 096997b290641a94bb9de0f5c0a54092,
         type: 2}
@@ -5854,6 +5854,21 @@ Prefab:
       propertyPath: Partikle
       value: 
       objectReference: {fileID: 661479274}
+    - target: {fileID: 114255907341792700, guid: 096997b290641a94bb9de0f5c0a54092,
+        type: 2}
+      propertyPath: HealthMultiplier
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255907341792700, guid: 096997b290641a94bb9de0f5c0a54092,
+        type: 2}
+      propertyPath: PatientHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255907341792700, guid: 096997b290641a94bb9de0f5c0a54092,
+        type: 2}
+      propertyPath: MultiplierCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 096997b290641a94bb9de0f5c0a54092, type: 2}
   m_IsPrefabAsset: 0
@@ -6319,7 +6334,7 @@ Transform:
   m_LocalScale: {x: 0.3517187, y: 0.3517187, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934123712
 GameObject:
@@ -6350,8 +6365,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1276723708}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
